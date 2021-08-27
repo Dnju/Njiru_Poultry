@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Profile"
+        android:icon="@drawable/user_account">
+        <menu>
+            <item
+                android:id="@+id/Login"
+                android:icon="@drawable/login_icon"
+                android:title="Login" />
+            <item
+                android:id="@+id/Logout"
+                android:icon="@drawable/logout_icon"
+                android:title="Logout" />
+
+
+        </menu>
+
+
+    </item>
+
+
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_meals"
+            android:title="Meals" />
+
+        <item
+            android:id="@+id/nav_Eggs"
+            android:title="Eggs" />
+        <item
+            android:id="@+id/nav_Vaccines"
+            android:title="vaccines" />
+
+        <item
+            android:id="@+id/nav_Chicken"
+            android:title="Chicken" />
+    </group>
+
+
+
+
+</menu>

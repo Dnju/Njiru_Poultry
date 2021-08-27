@@ -31,9 +31,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-    }
 
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new ChickenFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_Chicken);
+        }
+    }
     @SuppressLint("NonConstantResourceId")
+
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -41,29 +48,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ChickenFragment()).commit();
                 drawer.closeDrawers();
-                break ;
+                break;
             case R.id.nav_Eggs:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new EggFragment()).commit();
                 drawer.closeDrawers();
-                break ;
+                break;
             case R.id.nav_meals:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new MealFragment()).commit();
                 drawer.closeDrawers();
-                break ;
+                break;
             case R.id.nav_Vaccines:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new VaccineFragment()).commit();
                 drawer.closeDrawers();
-                break ;
+                break;
             case R.id.nav_profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ProfileFragment()).commit();
-                drawer.closeDrawer(GravityCompat.START,true);
+                drawer.closeDrawer(GravityCompat.START);
                 break;
-
-
 
 
         }

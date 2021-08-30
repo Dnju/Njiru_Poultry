@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
@@ -7,8 +9,48 @@
 
     <TextView
         android:id="@+id/nav_Chicken"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="  Chicken"
-        android:textSize="30sp" />
-</RelativeLayout>
+        android:layout_width="207dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/chicken_background"
+        android:gravity="center"
+        android:text="  Chickens"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="394dp"
+        android:layout_height="604dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="64dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_Chicken">
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
+            android:ems="10"
+            android:textStyle="bold"
+            android:hint="Chicken"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:ems="10"
+            android:textStyle="bold"
+            android:hint="Vaccine"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

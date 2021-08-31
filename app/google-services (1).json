@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "298790453566",
+    "project_id": "njiru-poultry-49c71",
+    "storage_bucket": "njiru-poultry-49c71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298790453566:android:bb063ed0601867314c6c6f",
+        "android_client_info": {
+          "package_name": "njiru.poultry.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298790453566-dslmgiku2e7s9ilu7i1fo1kmod620b6n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdiLaOloOVBzkR7bZDrl07aSYGL1bgV0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "298790453566-dslmgiku2e7s9ilu7i1fo1kmod620b6n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298790453566:android:e28b038c421dedd34c6c6f",
+        "android_client_info": {
+          "package_name": "njiru.poultry2.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298790453566-dslmgiku2e7s9ilu7i1fo1kmod620b6n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdiLaOloOVBzkR7bZDrl07aSYGL1bgV0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "298790453566-dslmgiku2e7s9ilu7i1fo1kmod620b6n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -23,7 +23,7 @@
 
 
         <TextView
-            android:id="@+id/nav_Chicken"
+            android:id="@+id/chicken_header"
             android:layout_width="197dp"
             android:layout_height="37dp"
             android:layout_gravity="center"
@@ -33,7 +33,7 @@
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/Et_chicken"
             android:layout_width="285dp"
             android:layout_height="78dp"
             android:ems="10"
@@ -43,17 +43,17 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/Et_vaccine"
             android:layout_width="285dp"
             android:layout_height="57dp"
             android:ems="10"
             android:hint="Vaccine:"
-            android:inputType="textPersonName"
 
+            android:inputType="textPersonName"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/Chicken_Save_button"
             android:layout_width="173dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

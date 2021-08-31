@@ -3,13 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item android:title="Profile"
+    <item android:title="Homepage"
         android:icon="@drawable/user_account">
         <menu>
             <item
-                android:id="@+id/Login"
-                android:icon="@drawable/login_icon"
-                android:title="Login" />
+                android:id="@+id/Home"
+                android:icon="@drawable/home_icon"
+                android:title="Home" />
+        </menu>
+    </item>
+
+
+    <item android:title="Profile"
+        android:icon="@drawable/user_account">
+        <menu>
+
             <item
                 android:id="@+id/Logout"
                 android:icon="@drawable/logout_icon"

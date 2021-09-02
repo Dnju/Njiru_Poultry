@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/nav_home"
     android:layout_height="match_parent"
     android:background="@drawable/chicken_background">
     -  parent FAB-->
 
     <TextView
-        android:id="@+id/nav_home"
+        android:id="@+id/Home"
         android:layout_width="132dp"
         android:layout_height="69dp"
         android:layout_marginEnd="279dp"

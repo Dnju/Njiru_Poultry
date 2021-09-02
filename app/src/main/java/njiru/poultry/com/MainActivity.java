@@ -29,23 +29,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
-
         toggle.syncState();
-
-
 
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new ChickenFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_Chicken);
+                    new homeFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_home);
         }
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new homeFragment()).commit();
+        navigationView.setCheckedItem(R.id.nav_home);
+
+
+
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -57,35 +63,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_Chicken:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ChickenFragment()).commit();
-                drawer.closeDrawers();
                 break;
             case R.id.nav_Eggs:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new EggFragment()).commit();
-                drawer.closeDrawers();
+
                 break;
             case R.id.nav_meals:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new MealFragment()).commit();
-                drawer.closeDrawers();
+
                 break;
             case R.id.nav_Vaccines:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new VaccineFragment()).commit();
-                drawer.closeDrawers();
                 break;
-            case R.id.nav_profile:
+            case R.id.nav_home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ProfileFragment()).commit();
-                drawer.closeDrawer(GravityCompat.START);
+                        new homeFragment()).commit();
                 break;
 
-            case R.id.nav_home:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new homeFragment()).commit();
-                drawer.closeDrawer(GravityCompat.START);
+
+
+
 
         }
+        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
@@ -96,9 +99,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             drawer.closeDrawer(GravityCompat.START);
 
         } else {
-
+            super.onBackPressed();
 
         }
-        super.onBackPressed();
+
     }
 }

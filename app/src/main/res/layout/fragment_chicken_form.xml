@@ -7,64 +7,105 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="383dp"
-        android:layout_height="591dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="104dp"
+    <TextView
+        android:id="@+id/chicken_header"
+        android:layout_width="349dp"
+        android:layout_height="37dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="30dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:text="@string/chickens"
+        android:textColor="#1E88E5"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="353dp"
+        android:layout_height="649dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="41dp"
         android:background="@drawable/chicken_background"
-        android:orientation="vertical"
-        android:paddingLeft="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chicken_header"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="248dp"
+            android:layout_height="261dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="360dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
-        <TextView
-            android:id="@+id/chicken_header"
-            android:layout_width="197dp"
-            android:layout_height="37dp"
-            android:layout_gravity="center"
-            android:background="@drawable/chicken_background"
-            android:gravity="center"
-            android:text="@string/chickens"
-            android:textSize="30sp" />
+            <EditText
+                android:id="@+id/Et_chicken"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
 
-        <EditText
-            android:id="@+id/Et_chicken"
-            android:layout_width="285dp"
-            android:layout_height="78dp"
-            android:ems="10"
+                android:ems="10"
+                android:hint="  Chicken:"
+                android:inputType="textPersonName"
+                android:textStyle="bold"
+                tools:ignore="UnknownId,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="39dp"
+                tools:layout_editor_absoluteY="65dp" />
 
-            android:hint="Chicken:"
-            android:inputType="textPersonName"
-            android:textStyle="bold" />
+            <EditText
+                android:id="@+id/Et_vaccine"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
 
-        <EditText
-            android:id="@+id/Et_vaccine"
-            android:layout_width="285dp"
-            android:layout_height="57dp"
-            android:ems="10"
-            android:hint="Vaccine:"
+                android:ems="10"
+                android:hint="  Vaccine:"
+                android:inputType="textPersonName"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="39dp"
+                tools:layout_editor_absoluteY="134dp" />
 
-            android:inputType="textPersonName"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/Chicken_Save_button"
+                android:layout_width="83dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:background="@drawable/chicken_background"
+                android:text="save"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="171dp"
+                tools:layout_editor_absoluteY="188dp" />
 
-        <Button
-            android:id="@+id/Chicken_Save_button"
-            android:layout_width="173dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/chicken_background"
-            android:text="save"
-            android:textAllCaps="false"
-            android:textSize="16sp"
-            android:textStyle="bold" />
 
-    </LinearLayout>
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/Chicken_spinner"
+            android:layout_width="45dp"
+            android:layout_height="63dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="570dp"
+            android:entries="@array/Chicken_type"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

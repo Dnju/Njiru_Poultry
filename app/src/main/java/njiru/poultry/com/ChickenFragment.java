@@ -1,5 +1,6 @@
 package njiru.poultry.com;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class ChickenFragment extends Fragment implements  View.OnClickListener {
     private Button addButton;
@@ -29,21 +31,26 @@ public class ChickenFragment extends Fragment implements  View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_chicken, container, false);
 
 
-        addButton = view.findViewById(R.id.btnAddChicken);
+        addButton = (Button) view.findViewById(R.id.btnAddChicken);
+
+        addButton.setOnClickListener(this);
 
         return view;
     }
 
+
     @Override
     public void onClick(View v) {
         if(v == addButton){
-            getActivity().getSupportFragmentManager().beginTransaction()
-                    .replace(getActivity().getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.Layout_container, nextFrag, "findThisFragment")
-                            .addToBackStack(null)
-                            .commit();, nextFrag, "findThisFragment")
+
+            ChickenFormFragment nextFrag = new ChickenFormFragment();
+            requireActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, nextFrag, "findThisFragment")
                     .addToBackStack(null)
                     .commit();
+
         }
     }
+
+
 }

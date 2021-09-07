@@ -5,8 +5,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,10 +24,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ChickenFormFragment extends Fragment {
-    EditText chicken, vaccine;
-    Button save;
-    FirebaseFirestore db;
-
+    private EditText chicken, vaccine;
+    private Button save;
+    private FirebaseFirestore db;
+    private Spinner spinner;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -36,6 +38,11 @@ public class ChickenFormFragment extends Fragment {
             chicken = view.findViewById(R.id.Et_chicken);
             vaccine = view.findViewById(R.id.Et_vaccine);
             save = view.findViewById(R.id.Chicken_Save_button);
+            spinner=(Spinner) view.findViewById(R.id.Chicken_spinner);
+
+            ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(getContext(),R.array.Chicken_type, android.R.layout.simple_spinner_item);
+            spinner.setAdapter(adapter);
+
             save.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -62,6 +69,8 @@ public class ChickenFormFragment extends Fragment {
                                     Toast.LENGTH_SHORT).show();
                             Log.e(getContext().getClass().getSimpleName(),"Error: " + ex.getMessage());
                         }
+
+
                     });
                 }
             });

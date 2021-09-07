@@ -5,13 +5,26 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add">Add</string>
+
     <string name="chickens">Chickens</string>
     <string-array name="Chicken_type">
         <item>Broiler</item>
-
-
-
-
         <item>Layers</item>
     </string-array>
+
+<string name="vaccines">vaccines</string>
+    <string-array name="Chicken_vacc">
+        <item>Mareks Disease Vaccine</item>
+        <item>Rahnikhet Disease Vaccine</item>
+        <item>Infectious Bursal Disease Vaccine</item>
+        <item>Infectious Bronchitis Vaccine</item>
+        <item>IB Vaccine Booster</item>
+        <item>Fowl Pox Vaccine</item>
+        <item>IB Booster</item>
+    </string-array>
+
+
+
+
+
 </resources>

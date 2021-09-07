@@ -32,6 +32,7 @@ public class ChickenFormFragment extends Fragment {
     private FirebaseFirestore db;
     private ImageView image3, image4;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chicken_form, container, false);
@@ -43,6 +44,8 @@ public class ChickenFormFragment extends Fragment {
         save = view.findViewById(R.id.Chicken_Save_button);
         image3 = view.findViewById(R.id.imageView3);
         image4 = view.findViewById(R.id.imageView4);
+
+
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_dropdown_item_1line, chickens);
         chicken.setAdapter(adapter);

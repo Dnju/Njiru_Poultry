@@ -1,5 +1,7 @@
 package njiru.poultry.com;
 
+import static android.service.controls.ControlsProviderService.TAG;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,9 +19,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -46,13 +51,34 @@ public class ChickenFormFragment extends Fragment {
         image4 = view.findViewById(R.id.imageView4);
 
 
-
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_dropdown_item_1line, chickens);
         chicken.setAdapter(adapter);
 
         adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_dropdown_item_1line, vaccines);
         vaccine.setAdapter(adapter);
+        //Db fetch
+        DocumentReference CHICKENRef = db.collection("CHICKEN").document("CHICKEN");
+        CHICKENRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
 
+                    if (document.exists()) {
+
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                }
+                else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+
+
+        //Chicken dropdown
         image3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,48 +93,47 @@ public class ChickenFormFragment extends Fragment {
             }
         });
 
-
-
-
-        save.setOnClickListener(new View.OnClickListener()
-
-    {
-        @Override
-        public void onClick (View v){
-        String Chicken = chicken.getText().toString();
-        String Vaccine = vaccine.getText().toString();
-
-        Map<String, Object> CHICKEN = new HashMap<>();
-        CHICKEN.put("Chicken", Chicken);
-        CHICKEN.put("Vaccine", Vaccine);
-        db.collection("CHICKEN")
-                .add(CHICKEN)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(getContext(), "Saved Successfully",
-                                Toast.LENGTH_SHORT).show();
-
-
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
+         // Acquire or get chicken and vaccine entered data.
+        save.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onFailure(@NonNull Exception ex) {
-                Toast.makeText(getContext(), "Failed",
-                        Toast.LENGTH_SHORT).show();
-                Log.e(getContext().getClass().getSimpleName(), "Error: " + ex.getMessage());
+            public void onClick(View v) {
+                String Chicken = chicken.getText().toString();
+                String Vaccine = vaccine.getText().toString();
+
+                Map<String, Object> CHICKEN = new HashMap<>();
+                CHICKEN.put("Chicken", Chicken);
+                CHICKEN.put("Vaccine", Vaccine);
+                db.collection("CHICKEN")
+                        .add(CHICKEN)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                Toast.makeText(getContext(), "Saved Successfully",
+                                        Toast.LENGTH_SHORT).show();
+
+
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception ex) {
+                        Toast.makeText(getContext(), "Failed",
+                                Toast.LENGTH_SHORT).show();
+                        Log.e(getContext().getClass().getSimpleName(), "Error: " + ex.getMessage());
+                    }
+
+
+                });
             }
-
-
         });
-    }
-    });
         return view;
-}
+    }
+    // Chicken and vaccine values to be displayed on click image.
     private static final String[] chickens = new String[]{"Broilers", "Layers"};
     private static final String[] vaccines = new String[]{"Mareks Disease Vaccine(HVT)", "Ranikhet Disease Vaccine",
             "infectious Bursal Disease Vaccine", "Infectious Bronchitis", "IB Vaccine Booster", "Fowl Pox Vaccine",
             "IB Booster"};
+
+
 }
 
 

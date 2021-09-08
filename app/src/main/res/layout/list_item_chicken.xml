@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="329dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="41dp"
+
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="547dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:background="#517BA1"
+            android:backgroundTint="#E0E1E4"
+            android:paddingTop="5dp"
+            android:paddingEnd="5dp"
+            android:text="Chicken Daily Records"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textColorHighlight="#1E88E5"
+            android:textColorHint="#1E88E5"
+            android:textColorLink="#1E88E5"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/Chicken_List"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:hint="Chicken:"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#E0E1E4"
+            android:backgroundTint="#E0E1E4" />
+
+        <TextView
+            android:id="@+id/Vaccine_List"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:hint="Vaccine:"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#E0E1E4"
+            android:backgroundTint="#E0E1E4" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

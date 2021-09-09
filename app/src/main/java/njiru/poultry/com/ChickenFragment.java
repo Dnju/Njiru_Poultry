@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,7 +31,6 @@ import java.util.Map;
 import java.util.Objects;
 
 public class ChickenFragment extends Fragment implements  View.OnClickListener {
-    private Button addButton;
     private RecyclerView mFirestoreList;
     private FirebaseFirestore firebaseFirestore;
     private FirestoreRecyclerAdapter adapter;
@@ -40,11 +40,12 @@ public class ChickenFragment extends Fragment implements  View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_chicken, container, false);
 
         mFirestoreList=(RecyclerView)view.findViewById(R.id.Recyclerview);
-        addButton = (Button) view.findViewById(R.id.btnAddChicken);
+
         firebaseFirestore=FirebaseFirestore.getInstance();
 
         //Query(Firestore)
         Query query=firebaseFirestore.collection("CHICKEN");
+
 
         //RecyclerOptions
         FirestoreRecyclerOptions<Chicken_ListsModel>options=new FirestoreRecyclerOptions.Builder<Chicken_ListsModel>()
@@ -52,7 +53,7 @@ public class ChickenFragment extends Fragment implements  View.OnClickListener {
                 .build();
 
        //FirestoreRecyclerAdapter
-         adapter= new FirestoreRecyclerAdapter<Chicken_ListsModel, ChickenViewHolder>(options) {
+          adapter= new FirestoreRecyclerAdapter<Chicken_ListsModel, ChickenViewHolder>(options) {
              //ChickenViewHolder
              @NonNull
              @Override
@@ -104,5 +105,6 @@ public class ChickenFragment extends Fragment implements  View.OnClickListener {
         super.onStart();
         adapter.startListening();
     }
+
 }
 

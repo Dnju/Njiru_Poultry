@@ -2,6 +2,7 @@ package njiru.poultry.com;
 
 import static android.service.controls.ControlsProviderService.TAG;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,11 +19,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -36,8 +39,9 @@ public class ChickenFormFragment extends Fragment {
     private Button save;
     private FirebaseFirestore db;
     private ImageView image3, image4;
+    private FloatingActionButton floatingActionButton;
 
-
+     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chicken_form, container, false);
@@ -49,13 +53,23 @@ public class ChickenFormFragment extends Fragment {
         save = view.findViewById(R.id.Chicken_Save_button);
         image3 = view.findViewById(R.id.imageView3);
         image4 = view.findViewById(R.id.imageView4);
+        floatingActionButton=view.findViewById(R.id.FLOAT);
+
+         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_dropdown_item_1line, chickens);
+         chicken.setAdapter(adapter);
+
+         adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_dropdown_item_1line, vaccines);
+         vaccine.setAdapter(adapter);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_dropdown_item_1line, chickens);
-        chicken.setAdapter(adapter);
+            }
+        });
 
-        adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_dropdown_item_1line, vaccines);
-        vaccine.setAdapter(adapter);
+
 
 
 
@@ -64,7 +78,10 @@ public class ChickenFormFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 chicken.showDropDown();
+
             }
+
+
         });
 
         image4.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +97,7 @@ public class ChickenFormFragment extends Fragment {
             public void onClick(View v) {
                 String Chicken = chicken.getText().toString();
                 String Vaccine = vaccine.getText().toString();
+
 
                 Map<String, Object> CHICKEN = new HashMap<>();
                 CHICKEN.put("Chicken", Chicken);
@@ -107,6 +125,7 @@ public class ChickenFormFragment extends Fragment {
             }
         });
         return view;
+
     }
     // Chicken and vaccine values to be displayed on click image.
     private static final String[] chickens = new String[]{"Broilers", "Layers"};

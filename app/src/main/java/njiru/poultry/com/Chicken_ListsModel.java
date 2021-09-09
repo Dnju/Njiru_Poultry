@@ -4,11 +4,12 @@ public class Chicken_ListsModel {
     private String Chicken;
     private String Vaccine;
 
-    private Chicken_ListsModel(){}
+    private Chicken_ListsModel() {
+    }
 
-    private Chicken_ListsModel(String Chicken, String Vaccine){
-        this.Chicken=Chicken;
-        this.Vaccine=Vaccine;
+    private Chicken_ListsModel(String Chicken, String Vaccine) {
+        this.Chicken = Chicken;
+        this.Vaccine = Vaccine;
     }
 
 

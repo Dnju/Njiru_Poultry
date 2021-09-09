@@ -14,9 +14,9 @@
         android:id="@+id/btnAddChicken"
         android:layout_width="92dp"
         android:layout_height="47dp"
-        android:layout_marginStart="161dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="137dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="4dp"
         android:background="#0072FD"
         android:text="@string/add"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,15 +25,13 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="407dp"
         android:id="@+id/Recyclerview"
-        android:layout_height="504dp"
+        android:layout_width="412dp"
+        android:layout_height="680dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/btnAddChicken"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

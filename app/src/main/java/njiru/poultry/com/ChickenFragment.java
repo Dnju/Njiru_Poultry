@@ -51,56 +51,43 @@ public class ChickenFragment extends Fragment implements  View.OnClickListener {
                 .setQuery(query,Chicken_ListsModel.class)
                 .build();
 
-
+       //FirestoreRecyclerAdapter
          adapter= new FirestoreRecyclerAdapter<Chicken_ListsModel, ChickenViewHolder>(options) {
-            @NonNull
-            @Override
-            public ChickenViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view=LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.list_item_chicken,parent,false);
-                return new ChickenViewHolder(view);
-            }
-
-            @Override
-            protected void onBindViewHolder(@NonNull ChickenViewHolder holder, int position, @NonNull Chicken_ListsModel model) {
-                holder.list_chicken.setText(model.getChicken());
-                holder.list_vaccine.setText(model.getVaccine());
-            }
-        };
-
-         mFirestoreList.setHasFixedSize(true);
-         mFirestoreList.setLayoutManager(new LinearLayoutManager(getContext()));
-         mFirestoreList.setAdapter(adapter);
-        //View Holder class
-
-        addButton.setOnClickListener(this);
+             //ChickenViewHolder
+             @NonNull
+             @Override
+             public ChickenViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                 View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_chicken,parent,false);
+                 return new ChickenViewHolder(view);
+             }
+              // Chicken onBindHolder
+             @Override
+             protected void onBindViewHolder(@NonNull ChickenViewHolder holder, int position, @NonNull Chicken_ListsModel model) {
+              holder.list_Chicken.setText(model.getChicken());
+              holder.list_Vaccine.setText(model.getVaccine());
+             }
+         };
+      mFirestoreList.setHasFixedSize(true);
+      mFirestoreList.setLayoutManager(new LinearLayoutManager(getContext()));
+      mFirestoreList.setAdapter(adapter);
 
         return view;
     }
-
-
+//setHasFixedSize(new LinearLayoutManager(this));
     @Override
     public void onClick(View v) {
-        if(v == addButton){
 
-            ChickenFormFragment nextFrag = new ChickenFormFragment();
-            requireActivity().getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, nextFrag, "findThisFragment")
-                    .addToBackStack(null)
-                    .commit();
-
-        }
     }
 
-
     private class ChickenViewHolder extends RecyclerView.ViewHolder{
-        private TextView list_chicken;
-        private TextView list_vaccine;
+        private TextView list_Chicken;
+        private TextView list_Vaccine;
+
         public ChickenViewHolder(@NonNull View itemView) {
             super(itemView);
+            list_Chicken=itemView.findViewById(R.id.Chicken_List);
+            list_Vaccine=itemView.findViewById(R.id.Vaccine_List);
 
-            list_chicken=itemView.findViewById(R.id.Chicken_List);
-            list_vaccine=itemView.findViewById(R.id.Vaccine_List);
 
 
         }

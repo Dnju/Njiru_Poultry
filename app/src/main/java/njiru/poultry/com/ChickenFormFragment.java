@@ -56,26 +56,7 @@ public class ChickenFormFragment extends Fragment {
 
         adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_dropdown_item_1line, vaccines);
         vaccine.setAdapter(adapter);
-        //Db fetch
-        DocumentReference CHICKENRef = db.collection("CHICKEN").document("CHICKEN");
-        CHICKENRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
 
-                    if (document.exists()) {
-
-                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-                    } else {
-                        Log.d(TAG, "No such document");
-                    }
-                }
-                else {
-                    Log.d(TAG, "get failed with ", task.getException());
-                }
-            }
-        });
 
 
         //Chicken dropdown

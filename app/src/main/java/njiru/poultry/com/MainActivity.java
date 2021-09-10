@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawer;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.nav_Chicken:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ChickenFormFragment()).commit();
+                        new ChickenFragment()).commit();
                 break;
             case R.id.nav_Eggs:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

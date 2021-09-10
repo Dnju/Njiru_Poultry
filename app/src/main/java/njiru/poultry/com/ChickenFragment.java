@@ -22,6 +22,7 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -34,18 +35,28 @@ public class ChickenFragment extends Fragment implements  View.OnClickListener {
     private RecyclerView mFirestoreList;
     private FirebaseFirestore firebaseFirestore;
     private FirestoreRecyclerAdapter adapter;
+    private FloatingActionButton floatingActionButton2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chicken, container, false);
 
         mFirestoreList=(RecyclerView)view.findViewById(R.id.Recyclerview);
-
+        floatingActionButton2=(FloatingActionButton) view.findViewById(R.id.floatingActionButton2);
         firebaseFirestore=FirebaseFirestore.getInstance();
 
         //Query(Firestore)
         Query query=firebaseFirestore.collection("CHICKEN");
+      //Chicken FloatingActionButton2
+        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction t= getFragmentManager().beginTransaction();
+                t.replace(R.id.fragment_container,new ChickenFormFragment());
+                t.commit();
 
+            }
+        });
 
         //RecyclerOptions
         FirestoreRecyclerOptions<Chicken_ListsModel>options=new FirestoreRecyclerOptions.Builder<Chicken_ListsModel>()

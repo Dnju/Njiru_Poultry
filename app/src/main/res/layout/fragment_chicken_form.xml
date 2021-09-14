@@ -32,9 +32,10 @@
         android:background="@drawable/chicken_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chicken_header"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
         <AutoCompleteTextView
             android:id="@+id/Et_chicken"
@@ -108,29 +109,12 @@
             app:layout_constraintTop_toBottomOf="@+id/Et_vaccine"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="47dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="19dp"
-            android:layout_marginEnd="68dp"
-            android:layout_marginBottom="595dp"
-            android:background="@drawable/chicken_background"
-            android:text="Date"
-            android:textAllCaps="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/FLOAT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="278dp"
-            android:layout_marginTop="534dp"
             android:layout_marginEnd="19dp"
             android:layout_marginBottom="5dp"
             android:clickable="true"
@@ -138,9 +122,42 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button"
             app:srcCompat="@drawable/ic_baseline_add_24"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/date"
+            android:layout_width="180dp"
+            android:layout_height="69dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="58dp"
+            android:layout_marginEnd="75dp"
+            android:background="@drawable/chicken_background"
+            android:hint=" Date..."
+            android:padding="15dp"
+            android:textColor="#1E88E5"
+            android:textColorHighlight="#1E88E5"
+            android:textColorHint="#1E88E5"
+            android:textColorLink="#1E88E5"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Chicken_Save_button" />
+
+        <ImageView
+            android:id="@+id/datepicker"
+            android:layout_width="63dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="77dp"
+            android:layout_marginBottom="368dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Chicken_Save_button"
+            app:srcCompat="@drawable/calendar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

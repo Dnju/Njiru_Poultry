@@ -50,7 +50,6 @@ public class ChickenFormFragment extends Fragment {
     private FirebaseFirestore db;
     private ImageView image3, image4;
     private FloatingActionButton floatingActionButton;
-    private TextView date;
     private Calendar myCalendar = Calendar.getInstance();
     private int mDate, mMonth, mYear;
     EditText date_d;

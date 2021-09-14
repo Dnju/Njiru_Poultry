@@ -13,13 +13,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Recyclerview"
-        android:layout_width="411dp"
-        android:layout_height="650dp"
-        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="392dp"
+        android:layout_marginTop="2dp"
+        android:background="#FFFCEF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/RecyclerView_Header" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton2"
@@ -38,5 +38,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Recyclerview"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/RecyclerView_Header"
+        android:layout_width="407dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="2dp"
+        android:text="        Chickens  Records"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Recyclerview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

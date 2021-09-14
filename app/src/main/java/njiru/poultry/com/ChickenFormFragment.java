@@ -37,7 +37,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.Calendar;
+import java.util.*;
+import java.time.*;
+import java.time.format.DateTimeParseException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -81,7 +83,7 @@ public class ChickenFormFragment extends Fragment {
                 mDate = cal.get(Calendar.DATE);
                 mMonth = cal.get(Calendar.MONTH);
                 mYear = cal.get(Calendar.YEAR);
-
+        //
                 DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), android.R.style.Theme_DeviceDefault_Dialog,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
@@ -134,13 +136,16 @@ public class ChickenFormFragment extends Fragment {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss aa");
                 String Chicken = chicken.getText().toString();
                 String Vaccine = vaccine.getText().toString();
+                String Currentdate=date_d.getText().toString();
 
 
                 Map<String, Object> CHICKEN = new HashMap<>();
                 CHICKEN.put("Chicken", Chicken);
                 CHICKEN.put("Vaccine", Vaccine);
+                CHICKEN.put("Date",Currentdate);
                 db.collection("CHICKEN")
                         .add(CHICKEN)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

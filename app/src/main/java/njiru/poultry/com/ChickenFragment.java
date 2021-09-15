@@ -25,6 +25,8 @@ public class ChickenFragment extends Fragment implements  View.OnClickListener {
     private FirebaseFirestore firebaseFirestore;
     private FirestoreRecyclerAdapter adapter;
     private FloatingActionButton floatingActionButton2;
+    private EditText editText;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -106,7 +108,10 @@ public class ChickenFragment extends Fragment implements  View.OnClickListener {
     public void onStart() {
         super.onStart();
         adapter.startListening();
+
     }
+
+
 
 }
 

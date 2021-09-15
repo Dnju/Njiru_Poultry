@@ -56,10 +56,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.nav_Chicken:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ChickenFragment()).commit();
-                break;
+
             case R.id.nav_Eggs:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new EggFragment()).commit();
@@ -74,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new VaccineFragment()).commit();
                 break;
-            case R.id.nav_home:
+            case R.id.Home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new homeFragment()).commit();
                 break;

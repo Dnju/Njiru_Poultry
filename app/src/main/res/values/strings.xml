@@ -12,7 +12,7 @@
         <item>Layers</item>
     </string-array>
 
-<string name="vaccines">vaccines</string>
+    <string name="vaccines">vaccines</string>
     <string-array name="Chicken_vacc">
         <item>Mareks Disease Vaccine</item>
         <item>Rahnikhet Disease Vaccine</item>
@@ -22,9 +22,6 @@
         <item>Fowl Pox Vaccine</item>
         <item>IB Booster</item>
     </string-array>
-
-
-
 
 
 </resources>

@@ -32,20 +32,10 @@
 
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_meals"
-            android:title="Meals" />
 
         <item
-            android:id="@+id/nav_Eggs"
-            android:title="Eggs" />
-        <item
-            android:id="@+id/nav_Vaccines"
-            android:title="vaccines" />
-
-        <item
-            android:id="@+id/nav_Chicken"
-            android:title="Chicken" />
+            android:id="@+id/nav_Reports"
+            android:title="Reports" />
     </group>
 
 

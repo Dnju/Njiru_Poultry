@@ -7,53 +7,179 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="377dp"
-        android:layout_height="97dp"
-        android:layout_marginTop="18dp"
-        android:background="@drawable/main_header"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            app:srcCompat="@drawable/head" />
-
-    </FrameLayout>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="377dp"
-        android:layout_height="550dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="37dp"
+        android:layout_width="375dp"
+        android:layout_height="685dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/main_header"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
             android:layout_width="352dp"
-            android:layout_height="76dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="436dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="38dp"
+            android:layout_height="358dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginBottom="54dp"
             android:background="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/chick_chick"
+                android:layout_width="122dp"
+                android:layout_height="105dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="27dp"
+                android:layout_marginEnd="186dp"
+                android:layout_marginBottom="1dp"
+                android:background="#808080"
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Meal_g"
+                app:srcCompat="@drawable/logg" />
+
+            <ImageView
+                android:id="@+id/Meal_grains"
+                android:layout_width="122dp"
+                android:layout_height="105dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="34dp"
+                android:background="#808080"
+                app:layout_constraintEnd_toStartOf="@+id/Egg_g"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                app:srcCompat="@drawable/ic_grain" />
+
+            <ImageView
+                android:id="@+id/Egg_g"
+                android:layout_width="127dp"
+                android:layout_height="105dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="195dp"
+                android:background="#808080"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_egg_icon" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="313dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="14dp"
+                android:text="Items"
+                android:textAlignment="center"
+                android:textColor="#FFB300"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toTopOf="@+id/Meal_grains"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Meal_g"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="76dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="67dp"
+                android:text="Meals"
+                android:textColor="#FFB300"
+                app:layout_constraintEnd_toStartOf="@+id/Egg_g"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Meal_grains" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="115dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="82dp"
+                android:text="Eggs"
+                android:textColor="#FFB300"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/Meal_g"
+                app:layout_constraintTop_toBottomOf="@+id/Egg_g" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="71dp"
+                android:layout_marginEnd="222dp"
+                android:layout_marginBottom="25dp"
+                android:text="Chicken"
+                android:textColor="#FFB300"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chick_chick" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="122dp"
+                android:layout_height="105dp"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="38dp"
+                android:layout_marginBottom="44dp"
+                android:background="#808080"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/chick_chick"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/vaccine_icon" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="91dp"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="23dp"
+                android:text="Vaccine"
+                android:textColor="#FFB300"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="352dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="16dp"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
 
             <TextView
                 android:id="@+id/textView10"
@@ -87,24 +213,22 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="352dp"
+            android:layout_height="128dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/aust"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="114dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="151dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="146dp"
-        android:layout_marginBottom="2dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:text="Chicken Farming"
-        android:textColor="#FFB300"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

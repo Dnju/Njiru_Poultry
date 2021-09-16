@@ -48,12 +48,6 @@ public class list_item_chicken extends Fragment {
 
     }
 
-    // vaccine values to be displayed on click image.
-   
-    private static final String[] vaccines = new String[]{"Mareks Disease Vaccine(HVT)", "Ranikhet Disease Vaccine",
-            "infectious Bursal Disease Vaccine", "Infectious Bronchitis", "IB Vaccine Booster", "Fowl Pox Vaccine",
-            "IB Booster"};
-
 
 }
 

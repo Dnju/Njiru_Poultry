@@ -13,19 +13,21 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 public class homeFragment extends Fragment {
-    private ImageView grain;
+    private ImageView meal;
     private ImageView egg;
     private ImageView chick;
+    private ImageView vac;
 
-    @Nullable
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_home, container, false);
-        grain=(ImageView) view.findViewById(R.id.Meal_grains);
+        meal=(ImageView) view.findViewById(R.id.Meal_grains);
         egg=(ImageView) view.findViewById(R.id.Egg_g);
         chick=(ImageView)view.findViewById(R.id.chick_chick);
+        vac=(ImageView)view.findViewById(R.id.vac_c);
 
-        grain.setOnClickListener(new View.OnClickListener() {
+        meal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction g = getFragmentManager().beginTransaction();
@@ -53,8 +55,14 @@ public class homeFragment extends Fragment {
             }
         });
 
-
-
+       vac.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               FragmentTransaction cin=getFragmentManager().beginTransaction();
+               cin.replace(R.id.fragment_container,new VaccineFragment());
+               cin.commit();
+           }
+       });
         return view;
 
     }

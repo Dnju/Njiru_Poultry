@@ -53,7 +53,7 @@
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <EditText
-            android:id="@+id/Meal_amount"
+            android:id="@+id/meal_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -65,7 +65,7 @@
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <Button
-            android:id="@+id/Meal_Save"
+            android:id="@+id/meal_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Save"

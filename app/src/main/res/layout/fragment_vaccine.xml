@@ -36,7 +36,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/vac_id"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:ems="10"
@@ -52,6 +52,7 @@
             android:textColorHint="#1E88E5">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/vac_desc"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:hint="Description:"
@@ -62,7 +63,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <EditText
-            android:id="@+id/editTextTextPersonName8"
+            android:id="@+id/chicken_type"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:ems="10"
@@ -74,7 +75,7 @@
             android:textColorLink="#1E88E5" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/vac_save"
             android:layout_width="196dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

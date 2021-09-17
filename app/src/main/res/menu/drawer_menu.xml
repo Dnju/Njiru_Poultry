@@ -14,14 +14,14 @@
     </item>
 
 
-    <item android:title="Profile"
+    <item android:title="Poultry Tips"
         android:icon="@drawable/user_account">
         <menu>
 
+
             <item
-                android:id="@+id/Logout"
-                android:icon="@drawable/logout_icon"
-                android:title="Logout" />
+                android:id="@+id/NP_desc"
+                android:title="Njiru Poultry Educational Tips" />
 
 
         </menu>

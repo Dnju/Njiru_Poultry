@@ -48,7 +48,7 @@
             tools:ignore="TouchTargetSizeCheck" />
 
         <Button
-            android:id="@+id/save_eggs"
+            android:id="@+id/save_egg"
             android:layout_width="match_parent"
             android:layout_height="41dp"
             android:layout_gravity="center"

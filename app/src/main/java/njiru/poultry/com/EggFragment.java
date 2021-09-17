@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,20 +22,20 @@ import java.util.Map;
 
 public class EggFragment extends Fragment {
    private EditText eggs;
-   private Button save_btn;
+   private Button save_eggs;
    private FirebaseFirestore db;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-      View view=inflater.inflate(R.layout.fragment_vaccine, container, false);
+      View view=inflater.inflate(R.layout.fragment_egg, container, false);
 
       eggs=(EditText) view.findViewById(R.id.Et_eggs);
-      save_btn=(Button) view.findViewById(R.id.save_eggs);
+      save_eggs=(Button) view.findViewById(R.id.save_egg);
       db=FirebaseFirestore.getInstance();
 
      //get and save data to Firebase Firestore DB
-      save_btn.setOnClickListener(new View.OnClickListener() {
+      save_eggs.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
               String Eggs = eggs.getText().toString();
@@ -50,7 +49,7 @@ public class EggFragment extends Fragment {
                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                    @Override
                    public void onSuccess(DocumentReference documentReference) {
-                       Toast.makeText(getContext(), "Saved Successfully",
+                       Toast.makeText(getContext(), "Eggs saved Successfully",
                                Toast.LENGTH_SHORT).show();
                    }
                })

@@ -25,15 +25,15 @@ public class ChickenFragment extends Fragment implements  View.OnClickListener {
     private FirebaseFirestore firebaseFirestore;
     private FirestoreRecyclerAdapter adapter;
     private FloatingActionButton floatingActionButton2;
-    private EditText editText;
+    //private EditText editText;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chicken, container, false);
 
-        mFirestoreList=(RecyclerView)view.findViewById(R.id.Recyclerview);
-        floatingActionButton2=(FloatingActionButton) view.findViewById(R.id.floatingActionButton2);
+        mFirestoreList=(RecyclerView)view.findViewById(R.id.Recyclerview1);
+        floatingActionButton2=(FloatingActionButton) view.findViewById(R.id.FA_btn_egg);
         firebaseFirestore=FirebaseFirestore.getInstance();
 
         //Query(Firestore)
@@ -83,18 +83,16 @@ public class ChickenFragment extends Fragment implements  View.OnClickListener {
 
     }
 
-    private class ChickenViewHolder extends RecyclerView.ViewHolder{
-        private TextView list_Chicken;
-        private TextView list_Vaccine;
-        private EditText list_Date;
+    private static class ChickenViewHolder extends RecyclerView.ViewHolder{
+        private final TextView list_Chicken;
+        private final TextView list_Vaccine;
+        private final EditText list_Date;
 
         public ChickenViewHolder(@NonNull View itemView) {
             super(itemView);
             list_Chicken=itemView.findViewById(R.id.Chicken_List);
             list_Vaccine=itemView.findViewById(R.id.Vaccine_List);
             list_Date=itemView.findViewById(R.id.Date_List);
-
-
         }
     }
 

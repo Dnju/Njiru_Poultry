@@ -12,17 +12,17 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/Recyclerview"
+        android:id="@+id/Recyclerview1"
         android:layout_width="394dp"
         android:layout_height="593dp"
         android:layout_marginTop="2dp"
         android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RecyclerView_Header" />
+        app:layout_constraintTop_toBottomOf="@+id/RecyclerView1_Header" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
+        android:id="@+id/FA_btn_egg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="339dp"
@@ -36,18 +36,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Recyclerview"
+        app:layout_constraintTop_toBottomOf="@+id/Recyclerview1"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/RecyclerView_Header"
+        android:id="@+id/RecyclerView1_Header"
         android:layout_width="407dp"
         android:layout_height="49dp"
         android:layout_marginTop="2dp"
         android:text="        Chickens  Records"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/Recyclerview"
+        app:layout_constraintBottom_toTopOf="@+id/Recyclerview1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.039" />

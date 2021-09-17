@@ -3,61 +3,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:id="@+id/nav_Eggs"
+    android:id="@+id/fragment_container1"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    tools:context=".ChickenFragment">
+
+    <!-- TODO: Update blank fragment layout -->
 
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="406dp"
-        android:layout_height="41dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Recyclerview2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:text="Eggs"
-        android:textAlignment="center"
-        android:textColor="#1E88E5"
-        android:textSize="25sp"
+        android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/RecyclerView1_Header" />
 
-    <LinearLayout
-        android:layout_width="341dp"
-        android:layout_height="641dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="41dp"
-        android:background="#FFFFFF"
-        android:orientation="vertical"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/FA_btn_egg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="339dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FDD835"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">
+        app:layout_constraintTop_toBottomOf="@+id/Recyclerview1"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <EditText
-            android:id="@+id/Et_eggs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Enter amount:"
-            android:inputType="number"
-            android:textColorHighlight="#1E88E5"
-            android:textColorHint="#1E88E5"
-            android:textColorLink="#1E88E5"
-            tools:ignore="TouchTargetSizeCheck" />
+    <TextView
+        android:id="@+id/RecyclerView1_Header"
+        android:layout_width="407dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="2dp"
+        android:text="Eggs Records"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Recyclerview1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039" />
 
-        <Button
-            android:id="@+id/save_egg"
-            android:layout_width="match_parent"
-            android:layout_height="41dp"
-            android:layout_gravity="center"
-            android:text="save"
-            android:textAllCaps="false"
-            android:textColor="#1E88E5"
-            android:textColorHighlight="#1E88E5"
-            android:textColorHint="#1E88E5"
-            android:textColorLink="#1E88E5"
-            tools:ignore="TouchTargetSizeCheck" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

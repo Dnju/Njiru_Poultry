@@ -1,77 +1,119 @@
 package njiru.poultry.com;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.google.firebase.firestore.Query;
 
 public class EggFragment extends Fragment {
-   private EditText eggs;
-   private Button save_eggs;
-   private FirebaseFirestore db;
+  private FirebaseFirestore firebaseFirestore;
+  private RecyclerView mFirestoreList1;
+  private FloatingActionButton floatingActionButton_eggs;
+  private FirestoreRecyclerAdapter adapter;
+  private static final String TAG = MainActivity.class.getSimpleName();
+
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-      View view=inflater.inflate(R.layout.fragment_egg, container, false);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_egg, container, false);
 
-      eggs=(EditText) view.findViewById(R.id.Et_eggs);
-      save_eggs=(Button) view.findViewById(R.id.save_egg);
-      db=FirebaseFirestore.getInstance();
+       firebaseFirestore=FirebaseFirestore.getInstance();
+       mFirestoreList1 = view.findViewById(R.id.Recyclerview2);
+       floatingActionButton_eggs=view.findViewById(R.id.FA_btn_egg);
 
-     //get and save data to Firebase Firestore DB
-      save_eggs.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-              String Eggs = eggs.getText().toString();
-
-
-              Map<String, Object> EGGS = new HashMap<>();
-              EGGS.put("Eggs", Eggs);
-
-       db.collection("EGGS")
-               .add(EGGS)
-               .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                   @Override
-                   public void onSuccess(DocumentReference documentReference) {
-                       Toast.makeText(getContext(), "Eggs saved Successfully",
-                               Toast.LENGTH_SHORT).show();
-                   }
-               })
-               .addOnFailureListener(new OnFailureListener() {
-                   @Override
-                   public void onFailure(@NonNull Exception e) {
-                       Toast.makeText(getContext(), "Failed",
-                               Toast.LENGTH_SHORT).show();
-                   }
-               });
+       //Query
+        Query query=firebaseFirestore.collection("EGGS");
 
 
 
-          }
-      });
+        //RecyclerOptions
+        FirestoreRecyclerOptions<Egg_ListModel> options=new FirestoreRecyclerOptions.Builder<Egg_ListModel>()
+                .setQuery(query,Egg_ListModel.class)
+                .build();
 
 
+
+         adapter= new FirestoreRecyclerAdapter<Egg_ListModel, EggViewHolder>(options) {
+            @NonNull
+            @Override
+            public EggViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_egg,parent, false);
+                return new EggViewHolder(view);
+            }
+
+            @Override
+            protected void onBindViewHolder(@NonNull EggViewHolder holder, int position, @NonNull Egg_ListModel model) {
+              holder.list_Quantity_egg.setText(model.getEgg());
+            }
+        };
+
+
+        mFirestoreList1.setHasFixedSize(true);
+        mFirestoreList1.setLayoutManager(new LinearLayoutManager(getContext()));
+        mFirestoreList1.setAdapter(adapter);
+        //viewHolder
 
 
 
 
 
-return view;
+
+
+        floatingActionButton_eggs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction gg=getFragmentManager().beginTransaction();
+                gg.replace(R.id.fragment_container,new EggFormFragment());
+                gg.commit();
+            }
+        });
+
+        return view;
+
     }
+
+
+    private static class EggViewHolder extends RecyclerView.ViewHolder {
+        private final TextView list_Quantity_egg;
+
+
+        public EggViewHolder(@NonNull View itemView) {
+            super(itemView);
+            list_Quantity_egg=itemView.findViewById(R.id.list_egg);
+
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+
 }
+
+
+

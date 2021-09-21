@@ -32,7 +32,7 @@ public class ChickenFragment extends Fragment implements  View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chicken, container, false);
 
-        mFirestoreList=(RecyclerView)view.findViewById(R.id.Recyclerview1);
+        mFirestoreList=(RecyclerView)view.findViewById(R.id.Recyclerview_chicken);
         floatingActionButton2=(FloatingActionButton) view.findViewById(R.id.FA_btn_egg);
         firebaseFirestore=FirebaseFirestore.getInstance();
 

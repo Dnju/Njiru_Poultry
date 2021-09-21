@@ -1,20 +1,20 @@
 package njiru.poultry.com;
 
 public class Egg_ListModel {
-    private String egg;
+    private String Eggs;
 
     //constructor
     private Egg_ListModel(){ }
 
-    private Egg_ListModel(String egg){
-        this.egg=egg;
+    private Egg_ListModel(String Eggs){
+        this.Eggs=Eggs;
     }
 
-    public String getEgg() {
-        return egg;
+    public String getEggs() {
+        return Eggs;
     }
 
-    public void setEgg(String egg) {
-        this.egg = egg;
+    public void setEggs(String Eggs) {
+        this.Eggs = Eggs;
     }
 }

@@ -24,7 +24,7 @@ public class EggFragment extends Fragment {
   private FirebaseFirestore firebaseFirestore;
   private RecyclerView mFirestoreList1;
   private FloatingActionButton floatingActionButton_eggs;
-  private FirestoreRecyclerAdapter adapter;
+  private FirestoreRecyclerAdapter adapter1;
   private static final String TAG = MainActivity.class.getSimpleName();
 
 
@@ -34,8 +34,9 @@ public class EggFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_egg, container, false);
 
        firebaseFirestore=FirebaseFirestore.getInstance();
-       mFirestoreList1 = view.findViewById(R.id.Recyclerview2);
+       mFirestoreList1 = view.findViewById(R.id.Recyclerview_eggs);
        floatingActionButton_eggs=view.findViewById(R.id.FA_btn_egg);
+
 
        //Query
         Query query=firebaseFirestore.collection("EGGS");
@@ -49,24 +50,24 @@ public class EggFragment extends Fragment {
 
 
 
-         adapter= new FirestoreRecyclerAdapter<Egg_ListModel, EggViewHolder>(options) {
+         adapter1= new FirestoreRecyclerAdapter<Egg_ListModel, EggViewHolder>(options) {
             @NonNull
             @Override
             public EggViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_egg,parent, false);
-                return new EggViewHolder(view);
+                View view1=LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_egg,parent, false);
+                return new EggViewHolder(view1);
             }
 
             @Override
             protected void onBindViewHolder(@NonNull EggViewHolder holder, int position, @NonNull Egg_ListModel model) {
-              holder.list_Quantity_egg.setText(model.getEgg());
+                holder.list_eggs.setText(model.getEggs());
             }
         };
 
 
         mFirestoreList1.setHasFixedSize(true);
         mFirestoreList1.setLayoutManager(new LinearLayoutManager(getContext()));
-        mFirestoreList1.setAdapter(adapter);
+        mFirestoreList1.setAdapter(adapter1);
         //viewHolder
 
 
@@ -90,12 +91,12 @@ public class EggFragment extends Fragment {
 
 
     private static class EggViewHolder extends RecyclerView.ViewHolder {
-        private final TextView list_Quantity_egg;
+        private TextView list_eggs;
 
 
         public EggViewHolder(@NonNull View itemView) {
             super(itemView);
-            list_Quantity_egg=itemView.findViewById(R.id.list_egg);
+            list_eggs=itemView.findViewById(R.id.list_egg);
 
         }
 
@@ -104,12 +105,12 @@ public class EggFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
-        adapter.stopListening();
+        adapter1.stopListening();
     }
     @Override
     public void onStart() {
         super.onStart();
-        adapter.startListening();
+        adapter1.startListening();
     }
 
 

@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class EggsAdapter extends RecyclerView.Adapter<EggsAdapter.EggsViewHolder>{
     Context context;
@@ -35,7 +36,8 @@ public class EggsAdapter extends RecyclerView.Adapter<EggsAdapter.EggsViewHolder
     public void onBindViewHolder(@NonNull EggsAdapter.EggsViewHolder holder, int position) {
 Eggs eggs=eggsArrayList.get(position);
 
-holder.Eggs.setText(eggs.eggs);
+
+        holder.Eggs.setText(eggs.eggs);
 
 
 

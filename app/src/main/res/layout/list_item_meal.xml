@@ -3,28 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="16dp"
     app:cardCornerRadius="10dp"
     app:cardMaxElevation="10dp">
 
-    <LinearLayout
-        android:id="@+id/linear_meal"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/list_meal"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:hint=" Meal:" />
+            android:layout_width="161dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Meal:"
+            app:layout_constraintBottom_toTopOf="@+id/list_quantity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.073"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/list_quantity"
-            android:layout_width="match_parent"
-            android:layout_height="33dp"
-            android:hint=" Quantity:" />
-
-    </LinearLayout>
+            android:layout_width="161dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="63dp"
+            android:hint="Quantity:"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.073"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/list_meal" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

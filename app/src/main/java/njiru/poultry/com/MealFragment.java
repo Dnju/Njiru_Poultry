@@ -49,6 +49,7 @@ public class MealFragment extends Fragment {
 
 
      progressDialog=new ProgressDialog(getContext());
+        progressDialog.setCancelable(false);
         progressDialog.setMessage("Fetching data.....");
         progressDialog.show();
 

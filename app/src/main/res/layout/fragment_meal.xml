@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="49dp"
         android:layout_marginTop="2dp"
-        android:text="        Meal  Records"
+        android:text="       Chicken  Meal  Records"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

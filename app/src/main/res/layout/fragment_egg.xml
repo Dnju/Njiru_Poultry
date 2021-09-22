@@ -12,17 +12,16 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/Recyclerview_eggs"
-        android:layout_width="319dp"
-        android:layout_height="580dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="44dp"
+        android:id="@+id/Recyclerview_egg"
+        android:layout_width="match_parent"
+        android:layout_height="601dp"
         android:layout_marginBottom="28dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/FA_btn_egg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/egg_title" />
+        app:layout_constraintTop_toBottomOf="@+id/egg_title"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/FA_btn_egg"
@@ -47,13 +46,12 @@
         android:layout_width="407dp"
         android:layout_height="49dp"
         android:layout_marginTop="2dp"
-        android:text="Eggs Records"
+        android:text="Chicken Eggs Records"
         android:textAlignment="center"
         android:textSize="20dp"
         android:textStyle="bold"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

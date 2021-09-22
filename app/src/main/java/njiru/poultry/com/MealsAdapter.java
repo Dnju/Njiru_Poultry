@@ -1,6 +1,5 @@
 package njiru.poultry.com;
 
-import android.app.DownloadManager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,8 +48,8 @@ public class MealsAdapter extends RecyclerView.Adapter<MealsAdapter.MealsViewHol
 
         public MealsViewHolder(@NonNull View itemView) {
             super(itemView);
-            Meals=itemView.findViewById(R.id.list_meal);
-            Quantity=itemView.findViewById(R.id.list_quantity);
+            Meals=itemView.findViewById(R.id.list_quantity);
+            Quantity=itemView.findViewById(R.id.list_meal);
 
         }
     }

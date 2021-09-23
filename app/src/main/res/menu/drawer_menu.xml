@@ -21,7 +21,7 @@
 
             <item
                 android:id="@+id/NP_desc"
-                android:title="Njiru Poultry Educational Tips" />
+                android:title="Njiru Poultry Tips" />
 
 
         </menu>

@@ -28,6 +28,7 @@ RecyclerView recyclerView;
 ArrayList<Eggs>eggsArrayList;
 EggsAdapter eggsAdapter;
 FirebaseFirestore db;
+FloatingActionButton floatingActionButton;
 ProgressDialog progressDialog;
 
     @Nullable
@@ -43,6 +44,7 @@ ProgressDialog progressDialog;
 
 
 recyclerView=view.findViewById(R.id.Recyclerview_egg);
+floatingActionButton=view.findViewById(R.id.Fab_egg);
 recyclerView.setHasFixedSize(true);
 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -55,8 +57,17 @@ eggsAdapter= new EggsAdapter(getContext(),eggsArrayList);
 recyclerView.setAdapter(eggsAdapter);
 
 
-EventChangeListener();
 
+
+EventChangeListener();
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction gg = getFragmentManager().beginTransaction();
+                gg.replace(R.id.fragment_container, new EggFormFragment());
+                gg.commit();
+            }
+        });
 
 return view;
 
@@ -93,6 +104,8 @@ return view;
                 });
 
     }
+
+
 }
 
 

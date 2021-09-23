@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/items"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/nav_chicken_chicken"
-        android:layout_width="333dp"
-        android:layout_height="151dp"
+        android:layout_width="334dp"
+        android:layout_height="117dp"
         android:layout_gravity="center"
         android:layout_marginStart="45dp"
         android:layout_marginEnd="46dp"
@@ -18,73 +20,70 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="251dp"
-            android:layout_height="117dp"
-            android:layout_marginBottom="34dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/Chicken_List"
-                android:layout_width="match_parent"
-                android:layout_height="37dp" />
-
-            <TextView
-                android:id="@+id/Vaccine_List"
-                android:layout_width="match_parent"
-                android:layout_height="37dp" />
-
-            <EditText
-                android:id="@+id/Date_List"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:editable="false"
-                android:ems="10"
-
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-        </LinearLayout>
-
         <TextView
-            android:id="@+id/textView14"
-            android:layout_width="55dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="1dp"
+            android:id="@+id/chic_c"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="6dp"
             android:text="Chicken:"
-            app:layout_constraintBottom_toTopOf="@+id/textView15"
-            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+            app:layout_constraintBottom_toTopOf="@+id/vac_n"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView15"
-            android:layout_width="55dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="8dp"
-            android:text="Vaccine:"
-            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+            android:id="@+id/Chicken_List"
+            android:layout_width="138dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView16"
-            android:layout_width="42dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="34dp"
-            android:text="  Date:"
+            android:id="@+id/vac_n"
+            android:layout_width="54dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="6dp"
+            android:text="Vaccine:"
+            app:layout_constraintBottom_toTopOf="@+id/textView14"
+            app:layout_constraintEnd_toStartOf="@+id/Vaccine_List"
+            app:layout_constraintTop_toBottomOf="@+id/chic_c" />
+
+        <TextView
+            android:id="@+id/Vaccine_List"
+            android:layout_width="138dp"
+            android:layout_height="34dp"
+            android:layout_marginEnd="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Chicken_List" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginStart="58dp"
+            android:layout_marginBottom="8dp"
+            android:text="Date:"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15"
-            app:layout_constraintVertical_bias="0.72" />
+            app:layout_constraintTop_toBottomOf="@+id/vac_n" />
+
+        <EditText
+            android:id="@+id/Date_List"
+            android:layout_width="138dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="100dp"
+            android:ems="10"
+            android:inputType="date"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView14"
+            app:layout_constraintTop_toBottomOf="@+id/Vaccine_List"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

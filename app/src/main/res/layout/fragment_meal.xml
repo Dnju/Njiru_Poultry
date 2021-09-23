@@ -32,7 +32,8 @@
         android:layout_width="match_parent"
         android:layout_height="49dp"
         android:layout_marginTop="2dp"
-        android:text="       Chicken  Meal  Records"
+        android:text="  Meal  Records"
+        android:textAlignment="center"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +47,7 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/FA_btn_egg"
+        app:layout_constraintBottom_toTopOf="@+id/Fab_egg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/egg_title" />

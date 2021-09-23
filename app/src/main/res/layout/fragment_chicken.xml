@@ -22,7 +22,7 @@
         app:layout_constraintTop_toBottomOf="@+id/egg_title" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/FA_btn_egg"
+        android:id="@+id/Fab_egg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="339dp"
@@ -45,6 +45,7 @@
         android:layout_height="49dp"
         android:layout_marginTop="2dp"
         android:text="        Chickens  Records"
+        android:textAlignment="center"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/Recyclerview_chicken"

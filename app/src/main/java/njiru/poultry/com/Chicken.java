@@ -1,19 +1,18 @@
 package njiru.poultry.com;
 
-public class Chicken_ListsModel {
-    private String Chicken;
-    private String Vaccine;
-    private String Date;
+public class Chicken {
+    private String Chicken, Vaccine, Date;
 
-    private Chicken_ListsModel() {
+
+    public Chicken(){
+
     }
 
-    private Chicken_ListsModel(String Chicken, String Vaccine, String Date) {
-        this.Chicken = Chicken;
-        this.Vaccine = Vaccine;
-        this.Date=Date;
+    public Chicken(String chicken, String vaccine, String date) {
+        Chicken = chicken;
+        Vaccine = vaccine;
+        Date = date;
     }
-
 
     public String getChicken() {
         return Chicken;
@@ -35,7 +34,7 @@ public class Chicken_ListsModel {
         return Date;
     }
 
-    public void setDate(String vaccine) {
-        Vaccine = Date;
+    public void setDate(String date) {
+        Date = date;
     }
 }

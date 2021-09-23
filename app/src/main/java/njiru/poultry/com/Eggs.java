@@ -1,7 +1,7 @@
 package njiru.poultry.com;
 
 public class Eggs {
-    String eggs;
+    String Eggs;
 
     //Firebase constructor
     public  Eggs(){
@@ -9,14 +9,14 @@ public class Eggs {
 
     //Eggs constructor
     public Eggs(String eggs) {
-        this.eggs = eggs;
+        this.Eggs = eggs;
     }
 
     public String getEggs() {
-        return eggs;
+        return Eggs;
     }
 
     public void setEggs(String eggs) {
-        this.eggs = eggs;
+        this.Eggs = eggs;
     }
 }

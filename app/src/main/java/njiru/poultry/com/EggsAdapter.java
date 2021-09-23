@@ -37,7 +37,7 @@ public class EggsAdapter extends RecyclerView.Adapter<EggsAdapter.EggsViewHolder
 Eggs eggs=eggsArrayList.get(position);
 
 
-        holder.Eggs.setText(eggs.eggs);
+        holder.Eggs.setText(eggs.Eggs);
 
 
 

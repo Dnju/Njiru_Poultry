@@ -12,17 +12,17 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/Recyclerview_chicken"
+        android:id="@+id/Recyclerview_vaccine"
         android:layout_width="394dp"
         android:layout_height="593dp"
         android:layout_marginTop="2dp"
         android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/egg_title" />
+        app:layout_constraintTop_toBottomOf="@+id/Title" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/Fab_egg"
+        android:id="@+id/Fab_vacc_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="339dp"
@@ -36,11 +36,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Recyclerview_chicken"
+        app:layout_constraintTop_toBottomOf="@+id/Recyclerview_vaccine"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/egg_title"
+        android:id="@+id/Title"
         android:layout_width="407dp"
         android:layout_height="49dp"
         android:layout_marginTop="2dp"
@@ -48,7 +48,7 @@
         android:textAlignment="center"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/Recyclerview_chicken"
+        app:layout_constraintBottom_toTopOf="@+id/Recyclerview_vaccine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.039" />

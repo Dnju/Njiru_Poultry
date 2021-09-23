@@ -56,10 +56,7 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
     implementation 'com.squareup.retrofit2:retrofit:(insert latest version)'
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
-
-
-
-
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
 
 
     testImplementation 'junit:junit:4.+'

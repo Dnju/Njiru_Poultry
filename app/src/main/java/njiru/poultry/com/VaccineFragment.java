@@ -1,89 +1,71 @@
 package njiru.poultry.com;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.firestore.DocumentReference;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 
-public class VaccineFragment extends Fragment {
-   private EditText mVaccine;
-   private TextInputEditText desc;
-   private EditText mChicken;
-   private Button save_vaccine;
-   private FirebaseFirestore db;
+public class VaccineFragment extends Fragment{
 
-    @Nullable
+    private RecyclerView recyclerView;
+    private FloatingActionButton floatingActionButton;
+    private FirebaseFirestore db;
+
+    ArrayList<Vaccines> vaccinesArrayList;
+    ChickenAdapter vaccinesAdapter;
+    ProgressDialog progressDialog;
+
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-      View view=inflater.inflate(R.layout.fragment_vaccine, container, false);
-
-      mVaccine=(EditText) view.findViewById(R.id.vac_id);
-      desc=(TextInputEditText)view.findViewById(R.id.vac_desc);
-      mChicken=(EditText) view.findViewById(R.id.vac_id);
-      save_vaccine=(Button)view.findViewById(R.id.vac_save);
-
-      db=FirebaseFirestore.getInstance();
-
-     //get and save data to Firebase Firestore DB
-      save_vaccine.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-              String VAC =mVaccine .getText().toString();
-              String DESC=desc.getText().toString();
-              String CHIC=mChicken.getText().toString();
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_vaccine, container, false);
 
 
+        progressDialog = new ProgressDialog(getContext());
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Fetching data.....");
+        progressDialog.show();
 
+        floatingActionButton = view.findViewById(R.id.Fab_vacc_list);
 
-              Map<String, Object> VACCINES = new HashMap<>();
-              VACCINES.put("VAC", VAC);
-              VACCINES.put("CHIC", CHIC);
-              VACCINES.put("DESC", DESC);
+        recyclerView = view.findViewById(R.id.Recyclerview_vaccine);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-       db.collection("VACCINES")
-               .add(VACCINES)
-               .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                   @Override
-                   public void onSuccess(DocumentReference documentReference) {
-                       Toast.makeText(getContext(), "Vaccines saved Successfully",
-                               Toast.LENGTH_SHORT).show();
-                   }
-               })
-               .addOnFailureListener(new OnFailureListener() {
-                   @Override
-                   public void onFailure(@NonNull Exception e) {
-                       Toast.makeText(getContext(), "Failed",
-                               Toast.LENGTH_SHORT).show();
-                   }
-               });
+        db = FirebaseFirestore.getInstance();
+        vaccinesArrayList=new ArrayList<Vaccines>();
+        vaccinesAdapter =new VaccinesAdapter(getContext(),vaccinesArrayList);
 
 
 
-          }
-      });
+                floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction vv = getFragmentManager().beginTransaction();
+                vv.replace(R.id.fragment_container, new VaccineFormFragment());
+                vv.commit();
 
-
-
-
-
-
-
+            }
+        });
 return view;
     }
 }
+

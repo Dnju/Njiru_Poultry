@@ -44,7 +44,7 @@ ProgressDialog progressDialog;
 
 
 recyclerView=view.findViewById(R.id.Recyclerview_egg);
-floatingActionButton=view.findViewById(R.id.Fab_egg);
+floatingActionButton=view.findViewById(R.id.Fab_vacc_list);
 recyclerView.setHasFixedSize(true);
 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 

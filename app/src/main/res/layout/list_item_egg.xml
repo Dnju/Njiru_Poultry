@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/list_eggs"
+                android:id="@+id/List_Vaccine"
                 android:layout_width="99dp"
                 android:layout_height="34dp" />
         </LinearLayout>

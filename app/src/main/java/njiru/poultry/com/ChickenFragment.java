@@ -44,8 +44,8 @@ public class ChickenFragment extends Fragment{
         progressDialog.setMessage("Fetching data.....");
         progressDialog.show();
 
-         floatingActionButton=view.findViewById(R.id.Fab_egg);
-        recyclerView = view.findViewById(R.id.Recyclerview_chicken);
+         floatingActionButton=view.findViewById(R.id.Fab_vacc_list);
+        recyclerView = view.findViewById(R.id.Recyclerview_vaccine);
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

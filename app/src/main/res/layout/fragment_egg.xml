@@ -17,14 +17,14 @@
         android:layout_height="601dp"
         android:layout_marginBottom="28dp"
         android:background="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/Fab_egg"
+        app:layout_constraintBottom_toTopOf="@+id/Fab_vacc_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/egg_title"
+        app:layout_constraintTop_toBottomOf="@+id/Title"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/Fab_egg"
+        android:id="@+id/Fab_vacc_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="339dp"
@@ -42,7 +42,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/egg_title"
+        android:id="@+id/Title"
         android:layout_width="407dp"
         android:layout_height="49dp"
         android:layout_marginTop="2dp"

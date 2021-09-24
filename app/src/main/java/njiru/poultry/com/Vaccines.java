@@ -1,38 +1,39 @@
 package njiru.poultry.com;
 
 public class Vaccines {
-    String CHIC, DESC, VAC;
-//Empty constructor for Firestore
-public Vaccines(){}
+    String Chicken, Description, Vaccine;
 
+    public Vaccines(){
 
-    public Vaccines(String CHIC, String DESC, String VAC) {
-        this.CHIC = CHIC;
-        this.DESC = DESC;
-        this.VAC = VAC;
     }
 
-    public String getCHIC() {
-        return CHIC;
+    public Vaccines(String chicken, String description, String vaccine) {
+        Chicken = chicken;
+        Description = description;
+        Vaccine = vaccine;
     }
 
-    public void setCHIC(String CHIC) {
-        this.CHIC = CHIC;
+    public String getChicken() {
+        return Chicken;
     }
 
-    public String getDESC() {
-        return DESC;
+    public void setChicken(String chicken) {
+        Chicken = chicken;
     }
 
-    public void setDESC(String DESC) {
-        this.DESC = DESC;
+    public String getDescription() {
+        return Description;
     }
 
-    public String getVAC() {
-        return VAC;
+    public void setDescription(String description) {
+        Description = description;
     }
 
-    public void setVAC(String VAC) {
-        this.VAC = VAC;
+    public String getVaccine() {
+        return Vaccine;
+    }
+
+    public void setVaccine(String vaccine) {
+        Vaccine = vaccine;
     }
 }

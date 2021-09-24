@@ -10,8 +10,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/nav_chicken_chicken"
-        android:layout_width="334dp"
-        android:layout_height="117dp"
+        android:layout_width="332dp"
+        android:layout_height="162dp"
         android:layout_gravity="center"
         android:layout_marginStart="45dp"
         android:layout_marginEnd="46dp"
@@ -22,68 +22,65 @@
 
         <TextView
             android:id="@+id/chic_c"
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="6dp"
+            android:layout_width="54dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="4dp"
             android:text="Chicken:"
-            app:layout_constraintBottom_toTopOf="@+id/vac_n"
+            app:layout_constraintEnd_toStartOf="@+id/Chicken_List"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/Chicken_List"
             android:layout_width="138dp"
-            android:layout_height="34dp"
+            android:layout_height="35dp"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="100dp"
+            android:layout_marginEnd="142dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/chic_c"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/vac_n"
             android:layout_width="54dp"
             android:layout_height="35dp"
-            android:layout_marginEnd="6dp"
+            android:layout_marginTop="4dp"
             android:text="Vaccine:"
-            app:layout_constraintBottom_toTopOf="@+id/textView14"
             app:layout_constraintEnd_toStartOf="@+id/Vaccine_List"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/chic_c" />
 
         <TextView
             android:id="@+id/Vaccine_List"
             android:layout_width="138dp"
-            android:layout_height="34dp"
-            android:layout_marginEnd="100dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="140dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Chicken_List" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:layout_marginStart="58dp"
-            android:layout_marginBottom="8dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="44dp"
+            android:inputType="text"
             android:text="Date:"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/vac_n" />
+            app:layout_constraintEnd_toStartOf="@+id/Date_List"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <EditText
+        <TextView
             android:id="@+id/Date_List"
             android:layout_width="138dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="100dp"
-            android:ems="10"
-            android:inputType="date"
-            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="162dp"
+            android:layout_marginBottom="44dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView14"
-            app:layout_constraintTop_toBottomOf="@+id/Vaccine_List"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            app:layout_constraintStart_toEndOf="@+id/textView14" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

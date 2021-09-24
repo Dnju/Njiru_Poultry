@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -42,22 +43,29 @@ public class VaccineFormFragment extends Fragment {
       floatingActionButton=view.findViewById(R.id.Fab_vaccine);
 
       db=FirebaseFirestore.getInstance();
+      floatingActionButton.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              FragmentTransaction vv = getFragmentManager().beginTransaction();
+              vv.replace(R.id.fragment_container, new VaccineFragment());
+              vv.commit();
+          }
+      });
 
      //get and save data to Firebase Firestore DB
       save_vaccine.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              String VAC =mVaccine .getText().toString();
-              String DESC=desc.getText().toString();
-              String CHIC=mChicken.getText().toString();
-
+              String Vaccine =mVaccine .getText().toString();
+              String Description=desc.getText().toString();
+              String Chicken=mChicken.getText().toString();
 
 
 
               Map<String, Object> VACCINES = new HashMap<>();
-              VACCINES.put("VAC", VAC);
-              VACCINES.put("CHIC", CHIC);
-              VACCINES.put("DESC", DESC);
+              VACCINES.put("Vaccine", Vaccine);
+              VACCINES.put("Chicken", Chicken);
+              VACCINES.put("Description", Description);
 
        db.collection("VACCINES")
                .add(VACCINES)

@@ -48,8 +48,7 @@ public class ChickenAdapter extends RecyclerView.Adapter<ChickenAdapter.ChickenV
 //inner class
 
     public  static class ChickenViewHolder extends RecyclerView.ViewHolder{
-    TextView Chicken, Vaccine;
-    EditText Date;
+    TextView Chicken, Vaccine, Date;
 
         public ChickenViewHolder(@NonNull View itemView) {
             super(itemView);

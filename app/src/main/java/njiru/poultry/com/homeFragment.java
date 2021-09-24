@@ -58,7 +58,7 @@ public class homeFragment extends Fragment {
            @Override
            public void onClick(View v) {
                FragmentTransaction cin=getFragmentManager().beginTransaction();
-               cin.replace(R.id.fragment_container,new VaccineFormFragment());
+               cin.replace(R.id.fragment_container,new VaccineFragment());
                cin.commit();
            }
        });

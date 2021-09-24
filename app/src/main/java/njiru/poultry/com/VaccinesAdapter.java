@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class VaccinesAdapter extends RecyclerView.Adapter<VaccinesAdapter.VaccinesViewHolder> {
-    Context context;
+   Context context;
     ArrayList<Vaccines>vaccinesArrayList;
     //generate a constructor for context and arraylist
 
@@ -27,33 +27,32 @@ public class VaccinesAdapter extends RecyclerView.Adapter<VaccinesAdapter.Vaccin
     public VaccinesAdapter.VaccinesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v= LayoutInflater.from(context).inflate(R.layout.list_item_vaccine,parent,false);
 
-
-
-
         return new VaccinesViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull VaccinesAdapter.VaccinesViewHolder holder, int position) {
-    Vaccines vaccines= vaccinesArrayList.get(position);
-    holder.VAC.setText(vaccines.VAC);
-    holder.DESC.setText(vaccines.DESC);
-    holder.CHIC.setText(vaccines.CHIC);
+    Vaccines vaccines=vaccinesArrayList.get(position);
+
+    holder.chicken.setText(vaccines.Chicken);
+    holder.description.setText(vaccines.Description);
+    holder.vaccine.setText(vaccines.Vaccine);
     }
 
     @Override
     public int getItemCount() {
+
         return vaccinesArrayList.size();
     }
 
     public static class VaccinesViewHolder extends RecyclerView.ViewHolder{
-        TextView CHIC,DESC, VAC;
+        TextView chicken,description, vaccine;
 
         public VaccinesViewHolder(@NonNull View itemView) {
             super(itemView);
-            CHIC=itemView.findViewById(R.id.List_Chicken);
-            DESC=itemView.findViewById(R.id.List_Desc);
-            VAC=itemView.findViewById(R.id.List_Vaccine);
+            chicken=itemView.findViewById(R.id.List_Chicken);
+            vaccine=itemView.findViewById(R.id.List_Vaccine);
+            description=itemView.findViewById(R.id.List_Desc);
 
         }
     }

@@ -1,6 +1,7 @@
 package njiru.poultry.com;
 
 import android.app.ProgressDialog;
+import android.graphics.drawable.AdaptiveIconDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,49 +24,96 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class VaccineFragment extends Fragment{
-
-    private RecyclerView recyclerView;
-    private FloatingActionButton floatingActionButton;
-    private FirebaseFirestore db;
-
-    ArrayList<Vaccines> vaccinesArrayList;
-    ChickenAdapter vaccinesAdapter;
-    ProgressDialog progressDialog;
-
+public class VaccineFragment extends Fragment {
+RecyclerView recyclerView;
+ArrayList<Vaccines> vaccinesArrayList;
+VaccinesAdapter vaccinesAdapter;
+FirebaseFirestore db;
+ProgressDialog progressDialog;
+FloatingActionButton floatingActionButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_vaccine, container, false);
 
-
-        progressDialog = new ProgressDialog(getContext());
+        progressDialog=new ProgressDialog(getContext());
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("Fetching data.....");
+        progressDialog.setMessage("Fetching Data");
         progressDialog.show();
 
-        floatingActionButton = view.findViewById(R.id.Fab_vacc_list);
 
-        recyclerView = view.findViewById(R.id.Recyclerview_vaccine);
+
+
+        recyclerView=view.findViewById(R.id.Recyclerview_vaccine);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        db = FirebaseFirestore.getInstance();
-        vaccinesArrayList=new ArrayList<Vaccines>();
-        vaccinesAdapter =new VaccinesAdapter(getContext(),vaccinesArrayList);
+        // Firebase Firestore Initialize
+        db=FirebaseFirestore.getInstance();
+
+        //ArrayList initialize
+        vaccinesArrayList=new ArrayList<>();
+
+        //VaccinesAdapter Initialize
+        vaccinesAdapter=new VaccinesAdapter(getContext(),vaccinesArrayList);
+
+        recyclerView.setAdapter(vaccinesAdapter);
+floatingActionButton=view.findViewById(R.id.Fab_vacc_list);
 
 
-
-                floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction vv = getFragmentManager().beginTransaction();
-                vv.replace(R.id.fragment_container, new VaccineFormFragment());
-                vv.commit();
-
-            }
-        });
-return view;
+floatingActionButton.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        FragmentTransaction vvv= getFragmentManager().beginTransaction();
+        vvv.replace(R.id.fragment_container, new VaccineFormFragment());
+        vvv.commit();
     }
-}
+});
 
+        //getting data from the Firestore
+        EventChangeListener();
+
+
+
+
+
+
+
+        return view;
+    }
+
+    private void EventChangeListener() {
+
+        db.collection("VACCINES").orderBy("Vaccine", Query.Direction.ASCENDING)
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error!=null){
+
+                            if (progressDialog.isShowing())
+                                progressDialog.dismiss();
+
+                            Log.e("Firestore error", error.getMessage());
+                            return;
+
+                        }
+
+                        for (DocumentChange dc:value.getDocumentChanges()){
+
+                            if (dc.getType()==DocumentChange.Type.ADDED) {
+
+                                vaccinesArrayList.add(dc.getDocument().toObject(Vaccines.class));
+
+                            }
+                            vaccinesAdapter.notifyDataSetChanged();
+                            if (progressDialog.isShowing())
+                                progressDialog.dismiss();
+                            }
+
+                        }
+
+                });
+
+    }
+
+}

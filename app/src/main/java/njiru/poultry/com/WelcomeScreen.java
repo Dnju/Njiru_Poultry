@@ -18,6 +18,6 @@ public class WelcomeScreen extends AppCompatActivity {
         handler.postDelayed(() -> {
             startActivity(new Intent(WelcomeScreen.this, MainActivity.class));
             finish();
-        }, 2000);
+        }, 1000);
     }
 }

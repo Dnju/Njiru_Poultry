@@ -37,7 +37,7 @@ public class homeFragment extends Fragment {
         meal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction g = getFragmentManager().beginTransaction();
+                FragmentTransaction g = getParentFragmentManager().beginTransaction();
                 g.replace(R.id.fragment_container, new MealFragment());
                 g.commit();
             }
@@ -47,7 +47,7 @@ public class homeFragment extends Fragment {
         egg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction e=getFragmentManager().beginTransaction();
+                FragmentTransaction e=getParentFragmentManager().beginTransaction();
                 e.replace(R.id.fragment_container,new EggFragment());
                 e.commit();
             }
@@ -56,7 +56,7 @@ public class homeFragment extends Fragment {
         chick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction c=getFragmentManager().beginTransaction();
+                FragmentTransaction c=getParentFragmentManager().beginTransaction();
                 c.replace(R.id.fragment_container,new ChickenFragment());
                 c.commit();
             }
@@ -65,7 +65,7 @@ public class homeFragment extends Fragment {
        vac.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               FragmentTransaction cin=getFragmentManager().beginTransaction();
+               FragmentTransaction cin=getParentFragmentManager().beginTransaction();
                cin.replace(R.id.fragment_container,new VaccineFragment());
                cin.commit();
            }
@@ -74,7 +74,7 @@ public class homeFragment extends Fragment {
         create_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction u=getFragmentManager().beginTransaction();
+                FragmentTransaction u=getParentFragmentManager().beginTransaction();
                 u.replace(R.id.fragment_container,new createAccountFragment());
                 u.commit();
             }

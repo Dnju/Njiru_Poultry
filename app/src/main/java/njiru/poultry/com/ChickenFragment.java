@@ -62,7 +62,7 @@ public class ChickenFragment extends Fragment{
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction cc = getFragmentManager().beginTransaction();
+                FragmentTransaction cc = getParentFragmentManager().beginTransaction();
                 cc.replace(R.id.fragment_container, new ChickenFormFragment());
                 cc.commit();
 

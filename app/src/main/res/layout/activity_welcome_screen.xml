@@ -2,11 +2,10 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:cardCornerRadius="23dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back_create"
-    android:backgroundTint="#1E88E5"
+    app:cardCornerRadius="23dp"
     tools:context=".WelcomeScreen">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,32 +22,49 @@
             android:layout_width="215dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="98dp"
-            android:layout_marginTop="370dp"
+            android:layout_marginTop="1dp"
             android:layout_marginEnd="98dp"
-            android:layout_marginBottom="284dp"
+            android:layout_marginBottom="212dp"
             android:fontFamily="serif"
             android:text="Njiru Poultry "
             android:textAlignment="center"
             android:textColor="#FDD835"
-            android:textSize="20sp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="383dp"
+            android:layout_height="230dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="249dp"
+            android:layout_marginEnd="98dp"
+            android:src="@drawable/welcome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/Home_of"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="199dp"
+            android:fontFamily="serif"
+            android:text="Home Of Poultry Farming"
+            android:textAlignment="center"
+            android:textColor="#FDD835"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="215dp"
-        android:layout_height="110dp"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="285dp"
-        android:layout_marginEnd="98dp"
-        android:src="@drawable/welcome"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.cardview.widget.CardView>

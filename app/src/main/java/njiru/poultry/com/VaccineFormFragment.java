@@ -46,7 +46,7 @@ public class VaccineFormFragment extends Fragment {
       floatingActionButton.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              FragmentTransaction vv = getFragmentManager().beginTransaction();
+              FragmentTransaction vv = getParentFragmentManager().beginTransaction();
               vv.replace(R.id.fragment_container, new VaccineFragment());
               vv.commit();
           }

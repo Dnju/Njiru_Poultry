@@ -63,7 +63,7 @@ EventChangeListener();
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction gg = getFragmentManager().beginTransaction();
+                FragmentTransaction gg = getParentFragmentManager().beginTransaction();
                 gg.replace(R.id.fragment_container, new EggFormFragment());
                 gg.commit();
             }

@@ -64,7 +64,7 @@ floatingActionButton=view.findViewById(R.id.Fab_vacc_list);
 floatingActionButton.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        FragmentTransaction vvv= getFragmentManager().beginTransaction();
+        FragmentTransaction vvv= getParentFragmentManager().beginTransaction();
         vvv.replace(R.id.fragment_container, new VaccineFormFragment());
         vvv.commit();
     }

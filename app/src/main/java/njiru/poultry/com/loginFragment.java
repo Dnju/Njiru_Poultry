@@ -61,14 +61,6 @@ SignIn.setOnClickListener(new View.OnClickListener() {
 
         }
 
-        if (!Patterns.EMAIL_ADDRESS.matcher(email_login).matches()) {
-
-
-            Email.setError("Please provide valid Email");
-            Email.requestFocus();
-            return;
-        }
-
 
         if (TextUtils.isEmpty(password_login)){
             Password.setError("Password is Required");
@@ -84,7 +76,7 @@ SignIn.setOnClickListener(new View.OnClickListener() {
         progressBar.setVisibility(View.VISIBLE);
 
         //authenticate the user
-        mAuth.createUserWithEmailAndPassword(email_login,password_login)
+        mAuth.signInWithEmailAndPassword(email_login,password_login)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {

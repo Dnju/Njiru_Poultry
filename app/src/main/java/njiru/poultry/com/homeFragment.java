@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class homeFragment extends Fragment {
     private ImageView meal;
@@ -21,7 +22,7 @@ public class homeFragment extends Fragment {
     private ImageView chick;
     private ImageView vac;
     private TextView create_user;
-
+    private FirebaseAuth fAuth;
 
 
     @Override
@@ -32,6 +33,7 @@ public class homeFragment extends Fragment {
         chick=(ImageView)view.findViewById(R.id.chick_chick);
         vac=(ImageView)view.findViewById(R.id.vac_c);
         create_user=(TextView)view.findViewById(R.id.user_create);
+        fAuth=FirebaseAuth.getInstance();
 
 
         meal.setOnClickListener(new View.OnClickListener() {
@@ -84,7 +86,23 @@ public class homeFragment extends Fragment {
         return view;
 
     }
+//Check the User is logged in or not
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseUser mFirebaseUser =fAuth.getCurrentUser();
+        if (mFirebaseUser!=null){
+           // user logged in
+        }else{
+            // user not logged in
+           FragmentTransaction  uS=getParentFragmentManager().beginTransaction();
+           uS.replace(R.id.fragment_container,new loginFragment());
+
+
+
+        }
 
 
     }
+}
 

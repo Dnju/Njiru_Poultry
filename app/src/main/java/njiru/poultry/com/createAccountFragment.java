@@ -95,33 +95,26 @@ public class createAccountFragment extends Fragment implements View.OnClickListe
 
                 //register the user in firebase
                 mAuth.createUserWithEmailAndPassword(Email,password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @SuppressLint("RestrictedApi")
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                           if (task.isSuccessful()){
-                               Toast.makeText(getContext(), "User Created", Toast.LENGTH_SHORT).show();
-                               FragmentTransaction n=getParentFragmentManager().beginTransaction();
-                               n.replace(R.id.fragment_container,new loginFragment());
-                               n.commit();
+                        .addOnCompleteListener(task -> {
+                       if (task.isSuccessful()){
+                           Toast.makeText(getContext(), "User Created", Toast.LENGTH_SHORT).show();
+                           FragmentTransaction n=getParentFragmentManager().beginTransaction();
+                           n.replace(R.id.container,new loginFragment());
+                           n.commit();
 
 
-                           }   else {
-                               Toast.makeText(getContext(), "Error !"+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-
-                           }
-                            }
+                       }   else {
+                           Toast.makeText(getContext(), "Error !"+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                           progressBar.setVisibility(View.GONE);
+                       }
                         });
             }
         });
         progressBar = view.findViewById(R.id.progressBar_load);
-       sign_in.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               FragmentTransaction lg = getParentFragmentManager().beginTransaction();
-               lg.replace(R.id.fragment_container, new loginFragment());
-               lg.commit();
-           }
+       sign_in.setOnClickListener(v -> {
+           FragmentTransaction lg = getParentFragmentManager().beginTransaction();
+           lg.replace(R.id.container, new loginFragment());
+           lg.commit();
        });
 
         return view;

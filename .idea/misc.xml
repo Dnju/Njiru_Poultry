@@ -26,6 +26,8 @@
         <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/drawable/logout_icon.xml" value="0.2111111111111111" />
         <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/drawable/main_header.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/drawable/user_account.xml" value="0.2111111111111111" />
+        <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/activity_create_account.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/activity_login.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/activity_main.xml" value="0.13" />
         <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/activity_welcome_screen.xml" value="0.25" />
         <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/fragment_chicken.xml" value="0.25" />
@@ -33,7 +35,7 @@
         <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/fragment_create_account.xml" value="0.25" />
         <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/fragment_egg.xml" value="0.25" />
         <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/fragment_egg_form.xml" value="0.1634963768115942" />
-        <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/fragment_list_item_chicken.xml" value="0.1" />
         <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/fragment_logout.xml" value="0.19882246376811594" />

@@ -25,12 +25,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class loginFragment extends Fragment implements View.OnClickListener {
-private TextView un_registered;
-private EditText  Email, Password;
-private Button SignIn;
-private ProgressBar progressBar;
-private FirebaseAuth mAuth;
-
+    private TextView un_registered;
+    private EditText Email, Password;
+    private Button SignIn;
+    private ProgressBar progressBar;
+    private FirebaseAuth mAuth;
 
 
     public loginFragment() {
@@ -39,79 +38,78 @@ private FirebaseAuth mAuth;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-      View view= inflater.inflate(R.layout.fragment_login, container, false);
+        View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-un_registered=view.findViewById(R.id.not_registered);
-Email=view.findViewById(R.id.email_login);
-Password=view.findViewById(R.id.password_login);
-SignIn=view.findViewById(R.id.sign_in);
-progressBar=view.findViewById(R.id.progressBar_load2);
-mAuth = FirebaseAuth.getInstance();
+        un_registered = view.findViewById(R.id.not_registered);
+        Email = view.findViewById(R.id.email_login);
+        Password = view.findViewById(R.id.password_login);
+        SignIn = view.findViewById(R.id.sign_in);
+        progressBar = view.findViewById(R.id.progressBar_load2);
+        mAuth = FirebaseAuth.getInstance();
 
-SignIn.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        String email_login=Email.getText().toString().trim();
-        String password_login=Password.getText().toString().trim();
+        SignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email_login = Email.getText().toString().trim();
+                String password_login = Password.getText().toString().trim();
 
-        //validating user credentials
-        if (TextUtils.isEmpty(email_login)){
-            Email.setError("Email is Required");
-            return;
+                //validating user credentials
+                if (TextUtils.isEmpty(email_login)) {
+                    Email.setError("Email is Required");
+                    return;
 
-        }
-
-
-        if (TextUtils.isEmpty(password_login)){
-            Password.setError("Password is Required");
-            return;
-
-        }
-
-        if (email_login.length()<6){
-            Password.setError("Password must be >=6 characters");
-            return;
-        }
-
-        progressBar.setVisibility(View.VISIBLE);
-
-        //authenticate the user
-        mAuth.signInWithEmailAndPassword(email_login,password_login)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                   if (task.isSuccessful()){
-
-                       Toast.makeText(getContext(), "Logged in successfully", Toast.LENGTH_SHORT).show();
-                       FragmentTransaction h=getParentFragmentManager().beginTransaction();
-                       h.replace(R.id.fragment_container,new homeFragment());
-                       h.commit();
-
-                   }
-                   else {
-                       Toast.makeText(getContext(), "Error !"+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
 
 
-                   }
-                    }
-                });
-    }
-});
+                if (TextUtils.isEmpty(password_login)) {
+                    Password.setError("Password is Required");
+                    return;
+
+                }
+
+                if (email_login.length() < 6) {
+                    Password.setError("Password must be >=6 characters");
+                    return;
+                }
+
+                progressBar.setVisibility(View.VISIBLE);
+
+                //authenticate the user
+                mAuth.signInWithEmailAndPassword(email_login, password_login)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+
+                                    Toast.makeText(getContext(), "Logged in successfully", Toast.LENGTH_SHORT).show();
+//                                    FragmentTransaction h = getParentFragmentManager().beginTransaction();
+//                                    h.replace(R.id.fragment_container, new homeFragment());
+//                                    h.commit();
+                                    getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
+                                    getActivity().finish();
+
+                                } else {
+                                    Toast.makeText(getContext(), "Error !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(View.GONE);
+
+                                }
+                            }
+                        });
+            }
+        });
 
 
-
-un_registered.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        FragmentTransaction u=getParentFragmentManager().beginTransaction();
-        u.replace(R.id.fragment_container,new createAccountFragment());
-        u.commit();
-    }
-});
-
+        un_registered.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction u = getParentFragmentManager().beginTransaction();
+                u.replace(R.id.container, new createAccountFragment());
+                u.commit();
+            }
+        });
 
 
-      return view;
+        return view;
     }
 
     @Override

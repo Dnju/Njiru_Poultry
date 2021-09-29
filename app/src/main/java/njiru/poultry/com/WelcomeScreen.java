@@ -16,7 +16,7 @@ public class WelcomeScreen extends AppCompatActivity {
 
         handler = new Handler();
         handler.postDelayed(() -> {
-            startActivity(new Intent(WelcomeScreen.this, MainActivity.class));
+            startActivity(new Intent(WelcomeScreen.this, LoginActivity.class));
             finish();
         }, 1000);
     }

@@ -108,7 +108,7 @@ public class ChickenFormFragment extends Fragment {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction t = getFragmentManager().beginTransaction();
+                FragmentTransaction t = getParentFragmentManager().beginTransaction();
                 t.replace(R.id.fragment_container, new ChickenFragment());
                 t.commit();
 
@@ -177,7 +177,7 @@ public class ChickenFormFragment extends Fragment {
     }
 
     // Chicken and vaccine values to be displayed on click image.
-    private static final String[] chickens = new String[]{"Broilers", "Layers"};
+    private static final String[] chickens = new String[]{"Broilers", "Layers","Broilers & Layers"};
     private static final String[] vaccines = new String[]{"Mareks Disease Vaccine(HVT)", "Ranikhet Disease Vaccine",
             "infectious Bursal Disease Vaccine", "Infectious Bronchitis", "IB Vaccine Booster", "Fowl Pox Vaccine",
             "IB Booster"};

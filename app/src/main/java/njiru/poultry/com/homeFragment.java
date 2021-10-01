@@ -1,6 +1,5 @@
 package njiru.poultry.com;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +20,7 @@ public class homeFragment extends Fragment {
     private ImageView egg;
     private ImageView chick;
     private ImageView vac;
-    private TextView create_user;
+    private TextView log_Out;
     private FirebaseAuth fAuth;
 
 
@@ -32,7 +31,7 @@ public class homeFragment extends Fragment {
         egg=(ImageView) view.findViewById(R.id.Egg_g);
         chick=(ImageView)view.findViewById(R.id.chick_chick);
         vac=(ImageView)view.findViewById(R.id.vac_c);
-        create_user=(TextView)view.findViewById(R.id.user_create);
+        log_Out=(TextView)view.findViewById(R.id.logout);
         fAuth=FirebaseAuth.getInstance();
 
 
@@ -73,11 +72,11 @@ public class homeFragment extends Fragment {
            }
        });
 
-        create_user.setOnClickListener(new View.OnClickListener() {
+        log_Out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction u=getParentFragmentManager().beginTransaction();
-                u.replace(R.id.fragment_container,new createAccountFragment());
+                u.replace(R.id.fragment_container,new loginFragment());
                 u.commit();
             }
         });

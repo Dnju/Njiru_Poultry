@@ -14,6 +14,13 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -35,6 +42,9 @@ public class MealFormFragment extends Fragment {
         mSave = (Button) view.findViewById(R.id.meal_save);
         mQuantity = (EditText) view.findViewById(R.id.meal_amount);
         db = FirebaseFirestore.getInstance();
+
+
+
 
         //get and save data to Firebase Firestore DB
         mSave.setOnClickListener(new View.OnClickListener() {

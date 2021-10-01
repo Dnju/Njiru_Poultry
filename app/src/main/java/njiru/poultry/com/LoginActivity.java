@@ -13,5 +13,6 @@ public class LoginActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container,
                 new loginFragment()).commit();
+
     }
 }

@@ -71,7 +71,7 @@ public class MealFragment extends Fragment {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction mm = getFragmentManager().beginTransaction();
+                FragmentTransaction mm = getParentFragmentManager().beginTransaction();
                 mm.replace(R.id.fragment_container, new MealFormFragment());
                 mm.commit();
             }

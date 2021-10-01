@@ -23,20 +23,20 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Fab_vacc_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="339dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#FDD835"
+        android:layout_width="49dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="119dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="#FFFFFF"
         android:clickable="true"
         android:src="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/download"
         app:layout_constraintTop_toBottomOf="@+id/Recyclerview_vaccine"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
@@ -52,5 +52,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.039" />
+
+    <ImageView
+        android:id="@+id/download"
+        android:layout_width="111dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginBottom="47dp"
+        android:src="@drawable/download"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Recyclerview_vaccine" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

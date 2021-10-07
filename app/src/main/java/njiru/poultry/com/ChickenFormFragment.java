@@ -58,6 +58,7 @@ public class ChickenFormFragment extends Fragment {
     private int mDate, mMonth, mYear;
     EditText date_d;
     ImageView cal;
+    private TextView try_try;
 
     @Nullable
     @Override
@@ -71,8 +72,8 @@ public class ChickenFormFragment extends Fragment {
         save = view.findViewById(R.id.Chicken_Save_button);
         image3 = view.findViewById(R.id.imageView3);
         image4 = view.findViewById(R.id.imageView4);
-        floatingActionButton = view.findViewById(R.id.FLOAT);
 
+        floatingActionButton = view.findViewById(R.id.FLOAT);
 
         // initiate the date picker and Edittext
         date_d = view.findViewById(R.id.date);

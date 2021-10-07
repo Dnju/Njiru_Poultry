@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -21,6 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
+
 import java.util.ArrayList;
 
 public class ChickenFragment extends Fragment{
@@ -29,9 +32,11 @@ public class ChickenFragment extends Fragment{
     private FloatingActionButton floatingActionButton;
     private FirebaseFirestore db;
 
+
     ArrayList<Chicken> chickenArrayList;
     ChickenAdapter chickenAdapter;
     ProgressDialog progressDialog;
+
 
 
     @Override
@@ -55,8 +60,6 @@ public class ChickenFragment extends Fragment{
         chickenArrayList = new ArrayList<Chicken>();
         chickenAdapter = new ChickenAdapter(getContext(), chickenArrayList);
         recyclerView.setAdapter(chickenAdapter);
-
-
 
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -106,5 +109,9 @@ return view;
 
 
     }
+
+
+
+
 }
 

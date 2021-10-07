@@ -22,6 +22,7 @@ public class homeFragment extends Fragment {
     private ImageView vac;
     private TextView log_Out;
     private FirebaseAuth fAuth;
+    private TextView egg_testing;
 
 
     @Override
@@ -33,7 +34,14 @@ public class homeFragment extends Fragment {
         vac=(ImageView)view.findViewById(R.id.vac_c);
         log_Out=(TextView)view.findViewById(R.id.logout);
         fAuth=FirebaseAuth.getInstance();
-
+egg_testing=(TextView)view.findViewById(R.id.Test);
+egg_testing.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        FragmentTransaction ts=getParentFragmentManager().beginTransaction();
+        ts.replace(R.id.fragment_container, tes)
+    }
+});
 
         meal.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -246,6 +246,20 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
+        <TextView
+            android:id="@+id/Test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="151dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="147dp"
+            android:layout_marginBottom="10dp"
+            android:text="Testme_egg"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

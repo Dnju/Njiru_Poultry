@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/activity_create_account.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/activity_egg_testapi.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/activity_mayai.xml" value="0.33" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/fragment_chicken.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/fragment_chicken_form.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/fragment_egg.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Njiru_Poultry/app/src/main/res/layout/fragment_egg_form.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/NjiruPoultry/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/NjiruPoultry/app/src/main/res/layout/fragment_chicken.xml" value="0.25" />
         <entry key="..\:/Users/dnjuguna/AndroidStudioProjects/NjiruPoultry/app/src/main/res/layout/fragment_egg.xml" value="0.26875" />

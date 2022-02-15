@@ -14,10 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NjiruPoultry">
         <activity
-            android:name=".mayai"
-            android:exported="true" />
-        <activity
-            android:name=".Egg_testapi"
+            android:name=".MayaiActivity"
             android:exported="true" />
         <activity
             android:name=".createAccountActivity"
